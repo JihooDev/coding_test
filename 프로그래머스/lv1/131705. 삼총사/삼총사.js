@@ -1,0 +1,18 @@
+function solution(number) {
+  // 결과 값 (삼총사 숫자)
+  let result = 0;
+
+  // 재귀 함수
+  const combination = (current, start) => {
+      if (current.length === 3) {
+          result += current.reduce((acc, cur) => acc + cur, 0) === 0 ? 1 : 0;
+          return;
+      }
+
+      for (let i = start; i < number.length; i++) {
+          combination([...current, number[i]], i + 1);
+      }
+  }
+  combination([], 0);
+  return result;
+}
