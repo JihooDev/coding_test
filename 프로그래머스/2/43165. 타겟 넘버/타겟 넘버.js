@@ -5,7 +5,6 @@ function solution(numbers, target) {
   dfs(0,0);
   
   function dfs(sum,index) {
-    // 재귀의 종료점
     if(numbers.length === index){
       if(sum === target) result+=1;
       return;
