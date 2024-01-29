@@ -8,7 +8,6 @@ function solution(begin, target, words) {
         if (current === target) break;
 
         words.forEach(value => {
-            console.log(value, current);
             if (isConnected(value, current) && !visited[value]) {
                 visited[value] = visited[current] + 1;
                 queue.push(value)
