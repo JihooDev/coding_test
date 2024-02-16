@@ -1,17 +1,18 @@
 function solution(n, costs) {
-    var result = 0;
-    var parent = [];
+    let result = 0;
+    let parent = [];
     for (let i = 0; i < n; i++) {
         parent.push(i);
     }
+    // 2차원배열 정렬
     costs.sort((a, b) => {
         return a[2] - b[2];
     })
     let count = 0;
     for (let i = 0; i < costs.length; i++) {
-        var a = find(parent, costs[i][0]);
-        var b = find(parent, costs[i][1]);
-        var l = costs[i][2];
+        let a = find(parent, costs[i][0]);
+        let b = find(parent, costs[i][1]);
+        let l = costs[i][2];
         if (a != b) {
             if (a < b) {
                 parent[b] = a;
