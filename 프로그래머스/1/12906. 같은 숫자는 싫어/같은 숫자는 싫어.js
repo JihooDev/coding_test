@@ -1,19 +1,13 @@
-// function solution(arr) {
-//     return arr.filter((item, idx) => item !== arr[idx + 1]);
-// }
-
 function solution(arr) {
-    let stack = [];
+    let result = [];
 
-    arr.forEach(nums => {
-        if (stack.length === 0) {
-            stack.push(nums);
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            continue;
         }
 
-        if (stack[stack.length - 1] !== nums) {
-            stack.push(nums);
-        }
-    })
+        result.push(arr[i]);
+    }
 
-    return stack;
+    return result;
 }
